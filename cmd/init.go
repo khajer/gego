@@ -14,8 +14,8 @@ func init(){ // like a constructor
 }
 
 var initCmd = &cobra.Command{
-	Use: "init [name]",
-	Short: "init project",
+	Use: "new [name]",
+	Short: "new project",
 	Long: `create new project with name `,
 	Args: cobra.MinimumNArgs(1),
 	// Args: func(cmd *cobra.Command, args []string) error {
