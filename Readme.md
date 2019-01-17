@@ -21,3 +21,11 @@ config.yml
 go.mod
 go.sum
 ```
+
+
+# how to use 
+## create project
+`
+gego new example.com
+`
+
