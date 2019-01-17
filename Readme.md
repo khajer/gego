@@ -35,3 +35,9 @@ config.yml
 go.mod
 go.sum
 ```
+# command list 
+```
+	gego new example.com
+	gego gen module test 
+
+```
