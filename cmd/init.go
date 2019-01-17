@@ -73,32 +73,31 @@ func writefile(path string, strData string) bool{
 }
 
 func generateFile(pathProject string, projectName string){
-	os.MkdirAll(pathProject, os.ModePerm)
-	if writefile(filepath.Join(pathProject, "main.go") , genFileMain(projectName)) {
-		println("generate file :"+filepath.Join(pathProject, "main.go"))
-	}
-	if writefile(filepath.Join(pathProject, "go.mod") , genFileGoMod(projectName)){
-		println("generate file :"+filepath.Join(pathProject, "go.mod"))
-	}
-	
-	pathRoute := filepath.Join(pathProject, "route") 	
-	os.MkdirAll(pathRoute, os.ModePerm)
-	if writefile(filepath.Join(pathRoute, "route.go") , genFileRoute(projectName)){
-		println("generate file :"+filepath.Join(pathRoute, "route.go"))		
-	}
+	createFolder(pathProject, "")
+	createFile(pathProject, "main.go", genFileMain(projectName))
+	createFile(pathProject, "go.mod", genFileGoMod(projectName))
+	pathRoute := createFolder(pathProject, "route") 
+	createFile(pathRoute, "route.go", genFileRoute(projectName))
+	pathHandler := createFolder(pathProject, "handler")
+	createFile(pathHandler, "handler.go", genFileHandler(projectName))
+	pathApp := createFolder(pathProject, "app")
+	createFile(pathApp, "app.go", genFileApp(projectName))
+}
 
-	pathHandler := filepath.Join(pathProject, "handler")
-	os.MkdirAll(pathHandler, os.ModePerm)
-	if writefile(filepath.Join(pathHandler, "handler.go") , genFileHandler(projectName)){
-		println("generate file :"+filepath.Join(pathHandler, "handler.go"))		
+func createFile(pathProject string, filename string, str string ) {
+	if writefile(filepath.Join(pathProject, filename), str) {
+		println("generate file : "+filepath.Join(pathProject, filename))
+	}else{
+		println("!error generate file : "+filepath.Join(pathProject, filename))
 	}
-
-	pathApp := filepath.Join(pathProject, "app")
-	os.MkdirAll(pathApp, os.ModePerm)
-	if writefile(filepath.Join(pathApp, "app.go") , genFileApp(projectName)){
-		println("generate file :"+filepath.Join(pathApp, "app.go"))		
+}
+func createFolder(mainPath string, folder string) string{
+	path := mainPath
+	if folder!="" {
+		path = filepath.Join(mainPath, folder)		
 	}
-
+	os.MkdirAll(path, os.ModePerm)
+	return path
 }
 
 func genFileApp(projectName string) string{
