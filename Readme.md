@@ -1,14 +1,23 @@
 # structure folder
-
-- app
+```
+/app
 	app.go
-	- feature
-		feature.go
-- handler
-	-handler.go
--route
+	feature1 
+		feature1.go
+		feature1_test.go
+	version
+		version.go
+		version_test.go 
+/conf
+	conf.go
+
+/handler
+	handler.go
+/route
 	route.go
 
 main.go
+config.yml
 go.mod
 go.sum
+```
