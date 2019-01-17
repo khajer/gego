@@ -6,9 +6,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-  Use:   "gofastcli",
-  Short: "gofastcli is a generator server api ",
-  Long: `gofastcli is pretty cool. write for generate server api.
+  Use:   "gego",
+  Short: "gego is a generator server api ",
+  Long: `gego is pretty cool. write for generate server api.
   	base on : httprouter
 	contact me at: khajer@yahoo.com
 		`,
