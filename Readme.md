@@ -1,10 +1,10 @@
 
 # how to build
 run build.sh or manual install
-`
+```
 	go build -o gego . 
 	sudo cp gego /usr/local/bin/
-`
+```
 
 # how to use 
 ## create project
