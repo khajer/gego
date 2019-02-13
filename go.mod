@@ -1,4 +1,4 @@
-module itsara.com/gofastcli
+module itsara.com/gego
 
 require (
 	github.com/spf13/cobra v0.0.3
