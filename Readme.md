@@ -1,4 +1,4 @@
-gego is a command for generate go sourcecode (REST API) 
+**gego** is a command for generate go sourcecode (REST API) 
 powered by github.com/spf13/cobra and github.com/julienschmidt/httprouter
 
 
