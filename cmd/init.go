@@ -96,6 +96,7 @@ func createFolder(mainPath string, folder string) string{
 	if folder!="" {
 		path = filepath.Join(mainPath, folder)		
 	}
+	println(path)
 	os.MkdirAll(path, os.ModePerm)
 	return path
 }

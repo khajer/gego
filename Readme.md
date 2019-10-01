@@ -1,5 +1,10 @@
 **gego** is a command for generate go sourcecode (REST API) 
-powered by github.com/spf13/cobra and github.com/julienschmidt/httprouter
+
+powered by 
+- github.com/spf13/cobra 
+- github.com/julienschmidt/httprouter
+
+
 
 
 # how to build
@@ -10,10 +15,14 @@ run build.sh or manual install
 ```
 
 # how to use 
-## create project
-`
+
+```
+# create project
 gego new example.com
-`
+
+# install dependency
+go get 
+```
 
 # structure folder
 ```
@@ -37,4 +46,10 @@ main.go
 config.yml
 go.mod
 go.sum
+```
+# command list 
+```
+	gego new example.com
+	gego gen module test 
+
 ```
